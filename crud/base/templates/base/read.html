@@ -1,0 +1,11 @@
+{% extends "base.html"%}
+{% block content %}
+<h4>Customer</h4>
+<div>
+    {% for user in users %}
+    <h5><a href="{% url 'delete' user.id %}">delete-{{forloop.counter}} </a><a href="{% url 'update' user.id %}">Update-{{forloop.counter}}</a>    - {{user.name}} - {{user.email}} - {{user.password}}--{{user.text}}</h5>
+
+    {% endfor%}
+</div>
+
+{% endblock%}

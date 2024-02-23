@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% block content %}
+<div>{% for work in works %}
+    <h1>{{work}} </h1>
+    {% endfor %}
+</div>
+<a href="{% url 'login' %}">login</a>
+<form id="logout" method="POST">
+    {% csrf_token %}
+    <input type="hidden">
+</form>
+<a class="nav-link" href="{% url 'logout'%}" onclick="javascript:document.getElementById('logout').submit()">
+    Logout
+</a>
+{% endblock %}

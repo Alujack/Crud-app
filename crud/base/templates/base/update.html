@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="name">Name: </label>
+    <input type="text" id="name", value="{{users.name}}" name="name", placeholder="Enter function name"><br/>
+    <label for="name">emai: </label>
+    <input type="email" id="email", value="{{users.email}}" name="email" , placeholder="Enter function email"><br />
+    <label for="name">password: </label>
+    <input type="password" id="password", value="{{users.password}}" name="password" , placeholder="............"><br />
+    <label for="name">text: </label>
+    <input type="text" id="text", value="{{users.text}}" name="text" , placeholder="Enter function text"><br />
+    <button type="submit">Submit</button>
+</form>
+{% endblock%}
